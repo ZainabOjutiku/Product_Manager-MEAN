@@ -1,0 +1,34 @@
+
+<div class="card col-sm-6 offset-sm-3 mt-5">
+  <div class="card-header">
+    New Product
+  </div>
+  <div class="card-body ">
+    <h5 *ngIf="this.newProduct.title.length < 5 && this.newProduct.title.length > 0"> Error: must be min 4</h5>
+    <form (submit)=" createProduct()">
+      <!--            <p> {{ newTask | json }} </p>-->
+      <div class="form-group">
+        <label for="inputname">Title</label>
+        <input type="text" class="form-control"  id="inputname" name="newProduct.title" required
+               minlength="4"
+               maxlength="24"[(ngModel)]="newProduct.title" placeholder="Enter title"/>
+
+      </div>
+      <div class="form-group">
+        <label for="inputname1">price</label>
+        <input type="Number" class="form-control" id="inputname1" name="newProduct.price" [(ngModel)]="newProduct.price" placeholder="Enter price"/>
+
+      </div>
+      <div class="form-group">
+        <label for="inputname2">URL</label>
+        <input type="text" class="form-control" id="inputname2" name="newProduct.image" [(ngModel)]="newProduct.image" placeholder="Enter url"/>
+
+      </div>
+      <!--        <input type="text" name="baker" [(ngModel)]="newCakes.baker" />-->
+      <!--        <input type="text" name="url" [(ngModel)]="newCakes.url" />-->
+      <input type="submit" value="Submit" class="button btn btn-primary offset-sm-3"/>
+      <button class="button btn btn-primary offset-sm-1" [routerLink]="['/products']" >Cancel</button>
+
+    </form>
+  </div>
+</div>

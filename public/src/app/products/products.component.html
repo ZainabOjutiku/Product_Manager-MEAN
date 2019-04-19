@@ -1,0 +1,22 @@
+<div style="max-height: 20em; overflow: auto" class="mt-5">
+  <h4>Products List</h4>
+  <div id='allProducts'*ngIf = 'allProducts' >
+    <div class="card mb-3 " style="max-width: 540px;" *ngFor= 'let product of allProducts'>
+      <div class="row no-gutters display-inline">
+        <div class="col-md-4">
+          <img  src="{{product.image}}" class="card-img">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p>{{product.title}}</p>
+            <p>{{product.price}}</p>
+            <button class="button btn btn-primary" [routerLink]="['/products','update', product._id]">Edit</button> <button class="button btn btn-danger offset-sm-1"(click)="deleteProduct(product)" >Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<button class="button btn btn-primary" [routerLink]="['/products', 'edit', product._id]">Edit</button>-->
+<!--"products/update/;id"-->

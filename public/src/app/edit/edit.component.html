@@ -1,0 +1,29 @@
+<div class="card col-sm-6 offset-sm-3 mt-5">
+  <div class="card-header">
+    <h4>Edit Product</h4>
+
+  </div>
+  <div class="card-body ">
+    <form (submit)=" editProduct()">
+      <div class="form-group">
+        <label for="inputname">Title</label>
+        <input type="text" class="form-control" id="inputname" name="editableproduct.title" [(ngModel)]="editableproduct.title" >
+
+      </div>
+      <div class="form-group">
+        <label for="inputname1">price</label>
+        <input type="Number" class="form-control" id="inputname1" name="editableproduct.price" [(ngModel)]="editableproduct.price" />
+
+      </div>
+      <div class="form-group">
+        <label for="inputname2">URL</label>
+        <input type="text" class="form-control" id="inputname2" name="editableproduct.image" [(ngModel)]="editableproduct.image" />
+
+      </div>
+
+      <input type="submit" value="Update" class="button btn btn-primary offset-sm-3" />
+      <button class="button btn btn-primary offset-sm-1" (click)="deleteProduct(editableproduct)" >Delete</button>
+
+    </form>
+  </div>
+</div>
